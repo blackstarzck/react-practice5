@@ -3,7 +3,8 @@ import TodoForm from './TodoForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-// 상위 컴포넌트 TodoList에서 정의된 props를 객체형태로 가져와서 사용할 수 있다.
+// 상위 컴포넌트 TodoList에서 정의된 props를 객체형태로 가져와서 사용할 수 있다. ES6문법으로, 객체와 key값이 동일할 경우 하나로 표기할 수 있다.
+// 아래 인자들은 TodoList에서 가져온 props이다.
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
