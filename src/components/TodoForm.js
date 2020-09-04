@@ -8,7 +8,7 @@ function TodoForm(props) {
     })
 
     const handleChange = e => {
-        setInput(e.target.value); // 사용자가 입력한 텍스트를 감지
+        setInput(e.target.value); // onChnage 이벤트 핸들러는 첫번째 매개변수 e라는 이벤트 객체를 받게 된다. 이벤트 객체의 value값을 가르킨다. 여기서는 input의 value={input}을 가르킨다.
     }
     const handleSubmit = e => {
         e.preventDefault();
