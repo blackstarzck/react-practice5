@@ -12,18 +12,20 @@ function TodoList() {
         setTodos(newTodos); // 위에 저장된 todos를 useState 배열에 데이터값으로 저장.
         console.log(...todos);
     }
+
+    //아래 Todo컴포넌트에 들어있는 props값을 아래와 같이 정의한다.
     const updateTodo = (todoId, newValue) => {
         if(!newValue.text || /^\s*$/.test(newValue.text)){
             return;
         }
         setTodos(prev => prev.map(item => (item.id === todoId ? newValue : item)));
     } 
-
+    //아래 Todo컴포넌트에 들어있는 props값을 아래와 같이 정의한다.
     const removeTodo = id => {
         const removeArr = [...todos].filter(todo => todo.id !== id);
         setTodos(removeArr);
     }
-
+    //아래 Todo컴포넌트에 들어있는 props값을 아래와 같이 정의한다.
     const completeTodo = id => {
         let updatedTodos = todos.map(todo => {
             if(todo.id === id){
@@ -42,7 +44,7 @@ function TodoList() {
             todos={todos} 
             completeTodo={completeTodo} 
             removeTodo={removeTodo} 
-            updateTodo={updateTodo }
+            updateTodo={updateTodo}
             />
         </div>
     )

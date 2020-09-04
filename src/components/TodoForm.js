@@ -11,15 +11,14 @@ function TodoForm(props) {
         setInput(e.target.value); // onChnage 이벤트 핸들러는 첫번째 매개변수 e라는 이벤트 객체를 받게 된다. 이벤트 객체의 value값을 가르킨다. 여기서는 input의 value={input}을 가르킨다.
     }
     const handleSubmit = e => {
-        e.preventDefault();
+        e.preventDefault(); // 새로고침 현상을 막는다.
 
         props.onSubmit({ // input에 입력된 내용을 저장한다. 
             id: Math.floor(Math.random() * 1000), // 함수가 작동될때마다 id에 랜덤한 수를 생성.
             text: input // 입력된 데이터를 text라는 키값에 전달.
         });
-        setInput('');
+        setInput(''); // 사용자가 텍스트를 입력후 input창을 빠져나왔거나 "Add Todo"버튼을 클릭 했음에도 불구하고 input창에 텍스트가 그래도 남아 있는 겻을 reset해주기 위함이다.
     }
-
     return (
         <form className="todo-form" onSubmit={handleSubmit}>
             {props.edit ? ( 
